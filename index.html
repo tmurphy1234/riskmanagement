@@ -1,14 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Risk Dashboard</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
 <body>
   <div class="layout">
+    
     <!-- Sidebar -->
     <aside class="sidebar">
       <h2 class="logo">RiskApp</h2>
       <nav>
         <ul>
-          <li> Dashboard</li>
-          <li> Risk Register</li>
-          <li> Add New Risk</li>
-          <li> Reports</li>
+          <li>📊 Dashboard</li>
+          <li>📋 Risk Register</li>
+          <li>➕ Add New Risk</li>
+          <li>📑 Reports</li>
         </ul>
       </nav>
       <div class="quick-actions">
@@ -22,7 +31,7 @@
         </div>
       </div>
       <div class="profile">
-        <img src="https://via.placeholder.com/40" alt="Profile picture">
+        <img src="https://via.placeholder.com/40" alt="Profile picture"/>
         <div>
           <strong>Jane Doe</strong>
           <p>Settings ▼</p>
@@ -30,9 +39,10 @@
       </div>
     </aside>
 
-    <!-- Main Content -->
+    <!-- Main area -->
     <div class="main">
-      <!-- Top Menu -->
+      
+      <!-- Topbar -->
       <header class="topbar">
         <ul>
           <li>Dashboard</li>
@@ -41,12 +51,13 @@
           <li>Settings</li>
         </ul>
       </header>
-
+      
+      <!-- Content -->
       <div class="content">
         <h1>Welcome, Jane!</h1>
         <h2 class="page-title">Dashboard</h2>
 
-        <!-- News Section -->
+        <!-- News -->
         <section class="news">
           <h3>Site News</h3>
           <ul>
@@ -56,7 +67,7 @@
           </ul>
         </section>
 
-        <!-- Risk Summary Cards -->
+        <!-- Risk summary -->
         <section class="risk-summary">
           <div class="card red">Active Risks <span id="activeCount">12</span></div>
           <div class="card orange">Monitored Risks <span id="monitoredCount">7</span></div>
@@ -75,13 +86,13 @@
           </select>
         </section>
 
-        <!-- Charts -->
+        <!-- Chart -->
         <section class="charts">
           <h3>Current Risks by Type</h3>
           <canvas id="riskTypeChart"></canvas>
         </section>
 
-        <!-- Risk Scorecard -->
+        <!-- Scorecard -->
         <section class="scorecard">
           <h3>Risk Scorecard</h3>
           <table>
@@ -94,13 +105,14 @@
               </tr>
             </thead>
             <tbody id="scorecardBody">
-              <!-- Filled by JavaScript -->
+              <!-- JS fills this -->
             </tbody>
           </table>
         </section>
+
       </div>
     </div>
   </div>
-
   <script src="script.js"></script>
 </body>
+</html>
