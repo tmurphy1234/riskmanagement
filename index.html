@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Risk Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>Risk Management Dashboard</h1>
+  </header>
+
+  <main class="container">
+    <!-- News Section -->
+    <section class="news">
+      <h2>Site News</h2>
+      <ul>
+        <li>[2025-09-04] Updated risk policies released.</li>
+        <li>[2025-08-29] New compliance checklist added.</li>
+        <li>[2025-08-20] Risk training scheduled for October.</li>
+      </ul>
+    </section>
+
+    <!-- Risk Summary Cards -->
+    <section class="risk-summary">
+      <div class="card red">Active Risks <span id="activeCount">12</span></div>
+      <div class="card orange">Monitored Risks <span id="monitoredCount">7</span></div>
+      <div class="card green">Resolved Risks <span id="resolvedCount">20</span></div>
+      <div class="card grey">Pending Approval <span id="pendingCount">3</span></div>
+    </section>
+
+    <!-- Filter -->
+    <section class="filters">
+      <label for="division">Filter by Division:</label>
+      <select id="division">
+        <option value="all">All Divisions</option>
+        <option value="finance">Finance</option>
+        <option value="hr">Human Resources</option>
+        <option value="it">IT</option>
+      </select>
+    </section>
+
+    <!-- Charts -->
+    <section class="charts">
+      <h2>Current Risks by Type</h2>
+      <canvas id="riskTypeChart"></canvas>
+    </section>
+
+    <!-- Risk Scorecard -->
+    <section class="scorecard">
+      <h2>Risk Scorecard</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Risk</th>
+            <th>Type</th>
+            <th>Division</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody id="scorecardBody">
+          <!-- Filled by JavaScript -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
