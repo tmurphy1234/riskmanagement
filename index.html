@@ -1,114 +1,106 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Risk Dashboard</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
 <body>
-  <!-- Sidebar -->
-  <aside class="sidebar">
-    <h2 class="logo">RiskApp</h2>
-    <nav>
-      <ul>
-        <li>📊 Dashboard</li>
-        <li>📋 Risk Register</li>
-        <li>➕ Add New Risk</li>
-        <li>📑 Reports</li>
-      </ul>
-    </nav>
-    <div class="quick-actions">
-      <div class="action">
-        <strong>Critical Risks</strong>
-        <p>Requires immediate attention</p>
-      </div>
-      <div class="action">
-        <strong>Risk Owners</strong>
-        <p>Manage assignments</p>
-      </div>
-    </div>
-    <div class="profile">
-      <img src="https://via.placeholder.com/40" alt="Profile picture">
-      <div>
-        <strong>Jane Doe</strong>
-        <p>Settings ▼</p>
-      </div>
-    </div>
-  </aside>
-
-  <!-- Main Content -->
-  <div class="main">
-    <!-- Top Menu -->
-    <header class="topbar">
-      <ul>
-        <li>Dashboard</li>
-        <li>Risk Management</li>
-        <li>Reports</li>
-        <li>Settings</li>
-      </ul>
-    </header>
-
-    <div class="content">
-      <h1>Welcome, Jane!</h1>
-      <h2 class="page-title">Dashboard</h2>
-
-      <!-- News Section -->
-      <section class="news">
-        <h3>Site News</h3>
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2 class="logo">RiskApp</h2>
+      <nav>
         <ul>
-          <li>[2025-09-04] Updated risk policies released.</li>
-          <li>[2025-08-29] New compliance checklist added.</li>
-          <li>[2025-08-20] Risk training scheduled for October.</li>
+          <li> Dashboard</li>
+          <li> Risk Register</li>
+          <li> Add New Risk</li>
+          <li> Reports</li>
         </ul>
-      </section>
+      </nav>
+      <div class="quick-actions">
+        <div class="action">
+          <strong>Critical Risks</strong>
+          <p>Requires immediate attention</p>
+        </div>
+        <div class="action">
+          <strong>Risk Owners</strong>
+          <p>Manage assignments</p>
+        </div>
+      </div>
+      <div class="profile">
+        <img src="https://via.placeholder.com/40" alt="Profile picture">
+        <div>
+          <strong>Jane Doe</strong>
+          <p>Settings ▼</p>
+        </div>
+      </div>
+    </aside>
 
-      <!-- Risk Summary Cards -->
-      <section class="risk-summary">
-        <div class="card red">Active Risks <span id="activeCount">12</span></div>
-        <div class="card orange">Monitored Risks <span id="monitoredCount">7</span></div>
-        <div class="card green">Resolved Risks <span id="resolvedCount">20</span></div>
-        <div class="card grey">Pending Approval <span id="pendingCount">3</span></div>
-      </section>
+    <!-- Main Content -->
+    <div class="main">
+      <!-- Top Menu -->
+      <header class="topbar">
+        <ul>
+          <li>Dashboard</li>
+          <li>Risk Management</li>
+          <li>Reports</li>
+          <li>Settings</li>
+        </ul>
+      </header>
 
-      <!-- Filter -->
-      <section class="filters">
-        <label for="division">Filter by Division:</label>
-        <select id="division">
-          <option value="all">All Divisions</option>
-          <option value="finance">Finance</option>
-          <option value="hr">Human Resources</option>
-          <option value="it">IT</option>
-        </select>
-      </section>
+      <div class="content">
+        <h1>Welcome, Jane!</h1>
+        <h2 class="page-title">Dashboard</h2>
 
-      <!-- Charts -->
-      <section class="charts">
-        <h3>Current Risks by Type</h3>
-        <canvas id="riskTypeChart"></canvas>
-      </section>
+        <!-- News Section -->
+        <section class="news">
+          <h3>Site News</h3>
+          <ul>
+            <li>[2025-09-04] Updated risk policies released.</li>
+            <li>[2025-08-29] New compliance checklist added.</li>
+            <li>[2025-08-20] Risk training scheduled for October.</li>
+          </ul>
+        </section>
 
-      <!-- Risk Scorecard -->
-      <section class="scorecard">
-        <h3>Risk Scorecard</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Risk</th>
-              <th>Type</th>
-              <th>Division</th>
-              <th>Score</th>
-            </tr>
-          </thead>
-          <tbody id="scorecardBody">
-            <!-- Filled by JavaScript -->
-          </tbody>
-        </table>
-      </section>
+        <!-- Risk Summary Cards -->
+        <section class="risk-summary">
+          <div class="card red">Active Risks <span id="activeCount">12</span></div>
+          <div class="card orange">Monitored Risks <span id="monitoredCount">7</span></div>
+          <div class="card green">Resolved Risks <span id="resolvedCount">20</span></div>
+          <div class="card grey">Pending Approval <span id="pendingCount">3</span></div>
+        </section>
+
+        <!-- Filter -->
+        <section class="filters">
+          <label for="division">Filter by Division:</label>
+          <select id="division">
+            <option value="all">All Divisions</option>
+            <option value="finance">Finance</option>
+            <option value="hr">Human Resources</option>
+            <option value="it">IT</option>
+          </select>
+        </section>
+
+        <!-- Charts -->
+        <section class="charts">
+          <h3>Current Risks by Type</h3>
+          <canvas id="riskTypeChart"></canvas>
+        </section>
+
+        <!-- Risk Scorecard -->
+        <section class="scorecard">
+          <h3>Risk Scorecard</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Risk</th>
+                <th>Type</th>
+                <th>Division</th>
+                <th>Score</th>
+              </tr>
+            </thead>
+            <tbody id="scorecardBody">
+              <!-- Filled by JavaScript -->
+            </tbody>
+          </table>
+        </section>
+      </div>
     </div>
   </div>
 
   <script src="script.js"></script>
 </body>
-</html>
