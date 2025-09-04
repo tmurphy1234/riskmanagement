@@ -1,15 +1,15 @@
-/* General Layout */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+/* Layout container */
+.layout {
   display: flex;
   height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
   background: #f5f6fa;
 }
 
 /* Sidebar */
 .sidebar {
-  width: 240px;
+  width: 220px;              /* Slim fixed width */
   background: #1a2b4c;
   color: white;
   display: flex;
@@ -67,14 +67,14 @@ body {
   margin: 0;
 }
 
-/* Main Content */
+/* Main content */
 .main {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-/* Top Bar */
+/* Top Menu */
 .topbar {
   background: white;
   padding: 0.75rem 1rem;
@@ -94,7 +94,7 @@ body {
   font-weight: bold;
 }
 
-/* Page Content */
+/* Content area */
 .content {
   padding: 1.5rem;
   overflow-y: auto;
@@ -112,6 +112,7 @@ body {
   margin-bottom: 1rem;
 }
 
+/* Risk summary cards */
 .risk-summary {
   display: flex;
   gap: 1rem;
