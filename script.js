@@ -40,6 +40,11 @@ function renderChart(filter) {
         data: counts,
         backgroundColor: ["#e74c3c", "#f39c12", "#3498db", "#2ecc71"]
       }]
+    },
+    options: {
+      plugins: {
+        legend: { position: "bottom" }
+      }
     }
   });
 }
