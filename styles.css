@@ -1,1 +1,74 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f5f6fa;
+}
 
+.site-header {
+  background: #1a2b4c;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.container {
+  padding: 1.5rem;
+}
+
+.news {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.risk-summary {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card {
+  flex: 1;
+  padding: 1rem;
+  border-radius: 8px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+.card span {
+  display: block;
+  font-size: 2rem;
+  margin-top: 0.5rem;
+}
+
+.red { background: #e74c3c; }
+.orange { background: #e67e22; }
+.green { background: #2ecc71; }
+.grey { background: #95a5a6; }
+
+.filters {
+  margin: 1rem 0;
+}
+
+.charts, .scorecard {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+}
+
+table th {
+  background: #eee;
+}
