@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add New Risk</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .form-section {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .form-section h2 {
+      margin-bottom: 0.25rem;
+    }
+    .form-section p {
+      color: #666;
+      margin-bottom: 1rem;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    textarea {
+      min-height: 80px;
+    }
+    .matrix {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.25rem;
+      margin: 1rem 0;
+    }
+    .matrix div {
+      text-align: center;
+      padding: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .matrix div:hover {
+      outline: 2px solid #333;
+    }
+    .selected {
+      outline: 2px solid blue;
+    }
+    .score {
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+    button {
+      padding: 0.75rem 1.5rem;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    
+    <!-- Sidebar (same as dashboard) -->
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="https://via.placeholder.com/40" alt="Logo">
+        <div>
+          <h2>NHS Risk Manager</h2>
+          <p>Risk Management System</p>
+        </div>
+      </div>
+      <nav class="nav">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">📊 Dashboard</a></li>
+          <li>📋 Risk Register</li>
+          <li><a href="add-risk.html">➕ Add New Risk</a></li>
+          <li>📑 Reports</li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main content -->
+    <div class="main">
+      <header class="header">
+        <h1>Add New Risk</h1>
+      </header>
+
+      <!-- Risk Identification -->
+      <section class="form-section">
+        <h2>Risk Identification</h2>
+        <p>Basic details to identify and categorize the risk.</p>
+        <div class="form-grid">
+          <div>
+            <label for="riskId">Risk ID</label>
+            <input type="text" id="riskId" value="RISK-20250904-21595" readonly>
+          </div>
+          <div>
+            <label for="title">Title</label>
+            <input type="text" id="title" placeholder="Enter risk title">
+          </div>
+          <div>
+            <label for="date">Date Added</label>
+            <input type="text" id="date" value="September 4, 2025" readonly>
+          </div>
+        </div>
+        <div class="form-grid">
+          <div>
+            <label for="division">Specialty / Division</label>
+            <select id="division">
+              <option>Select a specialty...</option>
+              <option>Finance</option>
+              <option>HR</option>
+              <option>IT</option>
+              <option>Clinical</option>
+            </select>
+          </div>
+          <div>
+            <label for="riskType">Risk Type</label>
+            <select id="riskType">
+              <option>Select a risk type...</option>
+              <option>Operational</option>
+              <option>Financial</option>
+              <option>Compliance</option>
+            </select>
+          </div>
+        </div>
+        <label>Description</label>
+        <textarea id="description"></textarea>
+        <label>Consequence</label>
+        <textarea id="consequence" placeholder="What are the potential consequences?"></textarea>
+        <label>Supplementary Information</label>
+        <textarea id="supplementary"></textarea>
+      </section>
+
+      <!-- Risk Assessment -->
+      <section class="form-section">
+        <h2>Risk Assessment</h2>
+        <p>Evaluate the risk using the matrix below.</p>
+        <div class="matrix" id="matrix">
+          <div data-score="1" style="background:#b2f2bb">1</div>
+          <div data-score="2" style="background:#d8f5a2">2</div>
+          <div data-score="3" style="background:#ffe066">3</div>
+          <div data-score="4" style="background:#fab005">4</div>
+          <div data-score="5" style="background:#fa5252;color:white">5</div>
+          <div data-score="6" style="background:#ffd43b">6</div>
+          <div data-score="8" style="background:#ff922b">8</div>
+          <div data-score="9" style="background:#ffa94d">9</div>
+          <div data-score="10" style="background:#ff6b6b;color:white">10</div>
+          <div data-score="12" style="background:#f76707;color:white">12</div>
+          <div data-score="15" style="background:#e03131;color:white">15</div>
+          <div data-score="16" style="background:#c92a2a;color:white">16</div>
+          <div data-score="20" style="background:#a61e4d;color:white">20</div>
+          <div data-score="25" style="background:#862e9c;color:white">25</div>
+        </div>
+        <p class="score">Calculated Risk Score: <span id="riskScore">-</span></p>
+      </section>
+
+      <!-- Risk Control & Action Plan -->
+      <section class="form-section">
+        <h2>Risk Control & Action Plan</h2>
+        <p>Define responsibilities, actions, and timelines.</p>
+        <div class="form-grid">
+          <div>
+            <label>Executive Lead</label>
+            <input type="text">
+          </div>
+          <div>
+            <label>Risk Owner</label>
+            <input type="text">
+          </div>
+        </div>
+        <label>Controls in Place</label>
+        <textarea></textarea>
+        <label>Actions Required</label>
+        <textarea></textarea>
+        <label>Assurances</label>
+        <textarea></textarea>
+        <label>Notes</label>
+        <textarea></textarea>
+        <div class="form-grid">
+          <div>
+            <label>Completion Date</label>
+            <input type="date">
+          </div>
+          <div>
+            <label>Review Date</label>
+            <input type="date">
+          </div>
+        </div>
+      </section>
+
+      <button type="submit">Submit Risk</button>
+    </div>
+  </div>
+
+  <script>
+    // Matrix click handler
+    const cells = document.querySelectorAll("#matrix div");
+    const scoreOutput = document.getElementById("riskScore");
+    cells.forEach(cell => {
+      cell.addEventListener("click", () => {
+        cells.forEach(c => c.classList.remove("selected"));
+        cell.classList.add("selected");
+        scoreOutput.innerText = cell.dataset.score;
+      });
+    });
+  </script>
+</body>
+</html>
