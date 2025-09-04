@@ -1,17 +1,15 @@
-/* Reset */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-body, html {
-  height: 100%;
+body {
   font-family: Arial, sans-serif;
-  background: #f5f6fa;
+  background: #f8f9fc;
+  color: #333;
 }
 
-/* Layout wrapper */
 .layout {
   display: flex;
   height: 100vh;
@@ -19,50 +17,73 @@ body, html {
 
 /* Sidebar */
 .sidebar {
-  width: 220px;
-  background: #1a2b4c;
-  color: white;
+  width: 260px;
+  background: #fff;
+  border-right: 1px solid #ddd;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   padding: 1rem;
+  justify-content: space-between;
 }
 
-.sidebar .logo {
-  margin-bottom: 1rem;
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
 }
 
-.sidebar nav ul {
+.logo h2 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.logo p {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+/* Navigation */
+.nav h4, .quick-actions h4 {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.nav ul {
   list-style: none;
+  padding-left: 0;
+  margin-bottom: 1.5rem;
 }
 
-.sidebar nav ul li {
+.nav li {
   padding: 0.5rem 0;
   cursor: pointer;
+  color: #333;
 }
 
-.quick-actions {
-  margin-top: 2rem;
-}
-
+/* Quick actions */
 .action {
-  background: rgba(255,255,255,0.1);
-  padding: 0.5rem;
-  border-radius: 6px;
+  padding: 0.75rem;
+  border-radius: 8px;
   margin-bottom: 1rem;
 }
 
 .action p {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   margin-top: 0.25rem;
-  color: #ddd;
+  color: #555;
 }
 
+.red { background: #fdecea; color: #c0392b; }
+.blue { background: #eaf3fd; color: #2980b9; }
+
+/* Profile */
 .profile {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  border-top: 1px solid rgba(255,255,255,0.2);
+  gap: 0.75rem;
+  border-top: 1px solid #ddd;
   padding-top: 1rem;
 }
 
@@ -71,67 +92,41 @@ body, html {
 }
 
 .profile p {
-  font-size: 0.8rem;
-  color: #ccc;
+  font-size: 0.75rem;
+  color: #666;
 }
 
-/* Main area */
+/* Main */
 .main {
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  background: #f5f6fa;
-}
-
-/* Topbar */
-.topbar {
-  background: white;
-  padding: 0.75rem 1rem;
-  border-bottom: 1px solid #ddd;
-}
-
-.topbar ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
-
-.topbar li {
-  cursor: pointer;
-  font-weight: bold;
-}
-
-/* Content */
-.content {
-  flex: 1;
-  padding: 1.5rem;
+  padding: 2rem;
   overflow-y: auto;
 }
 
-.page-title {
-  margin-top: 0.5rem;
-  font-weight: bold;
+.header h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
 }
 
-.news, .charts, .scorecard {
-  background: white;
-  padding: 1rem;
-  border-radius: 8px;
-  margin-bottom: 1rem;
+.header p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
 }
 
-/* Summary cards */
+/* Risk summary */
 .risk-summary {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
-  margin: 1rem 0;
+  margin-bottom: 2rem;
 }
 
 .card {
-  flex: 1;
+  background: #fff;
+  border: 1px solid #eee;
   padding: 1rem;
   border-radius: 8px;
-  color: white;
   text-align: center;
   font-weight: bold;
 }
@@ -142,35 +137,21 @@ body, html {
   margin-top: 0.5rem;
 }
 
-.red { background: #e74c3c; }
-.orange { background: #e67e22; }
-.green { background: #2ecc71; }
-.grey { background: #95a5a6; }
-
-/* Filters */
-.filters {
-  margin-bottom: 1rem;
-}
+.orange { background: #fff7f0; color: #e67e22; }
+.green { background: #eafaf1; color: #27ae60; }
+.grey { background: #f2f3f5; color: #555; }
 
 /* Chart */
+.charts {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
 .charts canvas {
   max-width: 400px;
-  max-height: 300px;
+  max-height: 250px;
   margin: auto;
   display: block;
-}
-
-/* Table */
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-table th, table td {
-  border: 1px solid #ddd;
-  padding: 0.5rem;
-}
-
-table th {
-  background: #eee;
 }
